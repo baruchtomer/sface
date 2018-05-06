@@ -234,9 +234,9 @@ function sendTobackground(target){
 	    }else if(res == "SHARE"){
 	    	chrome.runtime.sendMessage({action:"post_opt",text:"share_click"});
 	    }else if(res == "VIDEO"){
-	    	var video_btn = target.offsetParent.querySelector('[data-testid="mute_unmute_control"]');
+	    	//var video_btn = target.offsetParent.querySelector('[data-testid="mute_unmute_control"]');
 	    	//video_btn.click();
-
+	    	initVideoObservers();
 	    	chrome.runtime.sendMessage({action:"video",data:"click"});
 	    }else if(res.indexOf("WRITING_") !== -1){
 	    	if(res == "WRITING_MSG")
@@ -248,6 +248,7 @@ function sendTobackground(target){
 	        typeBox = target;
 	    }else{
 	    	typeBox = null;
+	    	disconnectVideo();
 	        chrome.runtime.sendMessage({action:"reaction",data:res});
 	    }
 	}

@@ -18,7 +18,7 @@
       "run_at": "document_end",
       "matches": ["<all_urls>"],
       "css": ["core.css"],
-      "js": ["jquery-3.2.1.js", "sface.js", "core.js"],
+      "js": ["jquery-3.2.1.js", "sface.js", "core.js", "recorder.js", "audio.js"],
       "all_frames": false
     }
   ],
